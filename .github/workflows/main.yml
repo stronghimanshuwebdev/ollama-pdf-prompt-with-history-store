@@ -14,6 +14,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Pull from hub to sync
+        run: git pull https://chaturvediuser:$HF_TOKEN@huggingface.co/spaces/chaturvediuser/Querry_Pdf_Prompt main
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
